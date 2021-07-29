@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68ea6e749c6462a42994e7ebd99b11c2, type: 3}
+  m_Name: UI Book
+  m_EditorClassIdentifier: 
+  flicks:
+  - {fileID: 11400000, guid: d23d28c1fb2404949a552a45eee1c233, type: 2}
+  - {fileID: 11400000, guid: bccfdc11e59a71044bfaf00836b5a63c, type: 2}
+  - {fileID: 11400000, guid: 06c82533a00c3674eae98e259060ab04, type: 2}

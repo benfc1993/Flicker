@@ -1,10 +1,11 @@
-﻿using UnityEngine;
+﻿using Flicker;
+using UnityEngine;
 
 public class Caster : MonoBehaviour
 {
-    public void CastSpell(FlickASO testing)
+    public void CastSpell(Flick testing)
     {
          SpellSO spell = (SpellSO)testing;
-         print(spell.type);
+         print(spell.spellName);
     }
 }

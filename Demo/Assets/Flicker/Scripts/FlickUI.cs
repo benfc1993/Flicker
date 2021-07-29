@@ -1,23 +1,47 @@
 ﻿using System.Collections;
 using Dist.ScriptableObjects.UIItems;
+using Flicker;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FlickUI : MonoBehaviour
 {
-    public TMP_Text text;
+    [SerializeField] TMP_Text text;
+    [SerializeField] Image image;
 
-    public void OnNewFlick(FlickASO flick)
+    WaitForSeconds timeout = new WaitForSeconds(20);
+
+    public void CustomFlickListener(FlickDataStruct flickData)
+    {
+        StopAllCoroutines();
+        ClearUI();
+        text.SetText(flickData.Pattern);
+        StartCoroutine(Timeout());
+    }
+
+    public void OnNewFlick(Flick flick)
     {
         UiFlickSO uiFlick = (UiFlickSO) flick;
-        StopCoroutine(Timeout());
-        text.SetText(uiFlick.pattern);
+        StopAllCoroutines();
+        ClearUI();
+        text.SetText(uiFlick.flickData.pattern);
         StartCoroutine(Timeout());
+        image.sprite = uiFlick.icon;
+        image.color = Color.white;
+        StartCoroutine(Timeout());
+    }
+
+    void ClearUI()
+    {
+        text.SetText("");
+        image.sprite = null;
+        image.color = new Color(0, 0, 0, 0);
     }
 
     IEnumerator Timeout()
     {
-        yield return new WaitForSeconds(1);
-        text.SetText("");
+        yield return timeout;
+        ClearUI();
     }
 }

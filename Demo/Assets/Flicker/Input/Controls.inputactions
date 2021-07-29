@@ -1,0 +1,64 @@
+{
+    "name": "Controls",
+    "maps": [
+        {
+            "name": "Flicker",
+            "id": "585634b7-947f-4bd4-adbb-238e2b8ba6f8",
+            "actions": [
+                {
+                    "name": "FlickerStick",
+                    "type": "Value",
+                    "id": "97f60f94-d22c-4f4f-9b64-1061cf2f18c9",
+                    "expectedControlType": "Stick",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Active",
+                    "type": "Button",
+                    "id": "8abd02d2-0efc-4c84-9f58-152d2c36f1ee",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "fd427898-d41c-4bdb-9212-20d087935ce5",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Active",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "da0df7fb-4e26-41e1-9787-99ba3102c608",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FlickerStick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "New control scheme",
+            "bindingGroup": "New control scheme",
+            "devices": [
+                {
+                    "devicePath": "<Gamepad>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
