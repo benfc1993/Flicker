@@ -12,7 +12,7 @@ public class FlickUI : MonoBehaviour
 
     WaitForSeconds timeout = new WaitForSeconds(20);
 
-    public void CustomFlickListener(FlickDataStruct flickData)
+    public void CustomFlickListener(FlickData flickData)
     {
         StopAllCoroutines();
         ClearUI();
@@ -25,7 +25,7 @@ public class FlickUI : MonoBehaviour
         UiFlickSO uiFlick = (UiFlickSO) flick;
         StopAllCoroutines();
         ClearUI();
-        text.SetText(uiFlick.flickData.pattern);
+        text.SetText(uiFlick.flickDataSO.pattern);
         StartCoroutine(Timeout());
         image.sprite = uiFlick.icon;
         image.color = Color.white;

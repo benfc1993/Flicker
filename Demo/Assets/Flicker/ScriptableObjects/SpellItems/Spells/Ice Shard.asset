@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76419c8e2d659c440863230dc41fefcf, type: 3}
   m_Name: Ice Shard
   m_EditorClassIdentifier: 
-  flickData: {fileID: 11400000, guid: f11f80a2b3415ea488232fe9c7c300a4, type: 2}
+  flickDataSO: {fileID: 11400000, guid: f11f80a2b3415ea488232fe9c7c300a4, type: 2}
   spellName: Ice Shard
   type: 0
+  particles: {fileID: 8228456410625169158, guid: 41de8a3a447fcc044951ea3c46f6803b, type: 3}

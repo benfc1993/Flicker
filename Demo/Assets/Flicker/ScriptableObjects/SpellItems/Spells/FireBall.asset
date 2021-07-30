@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76419c8e2d659c440863230dc41fefcf, type: 3}
   m_Name: FireBall
   m_EditorClassIdentifier: 
-  flickData: {fileID: 11400000, guid: 7cbeb609980265a4485c09fcb67baf0f, type: 2}
+  flickDataSO: {fileID: 11400000, guid: 7cbeb609980265a4485c09fcb67baf0f, type: 2}
   spellName: Fire Ball
   type: 0
+  particles: {fileID: 8228456410625169158, guid: 768ddd0a743637c40a328e682ca41716, type: 3}

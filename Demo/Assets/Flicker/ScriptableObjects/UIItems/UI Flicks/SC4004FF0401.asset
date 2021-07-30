@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da92eaca89d787f43bd9c52769d1efc0, type: 3}
-  m_Name: SC3003FF0301
+  m_Name: SC4004FF0401
   m_EditorClassIdentifier: 
-  flickData: {fileID: 11400000, guid: f11f80a2b3415ea488232fe9c7c300a4, type: 2}
+  flickDataSO: {fileID: 11400000, guid: f11f80a2b3415ea488232fe9c7c300a4, type: 2}
   icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}

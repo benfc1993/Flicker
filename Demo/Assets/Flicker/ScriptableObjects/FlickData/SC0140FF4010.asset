@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76419c8e2d659c440863230dc41fefcf, type: 3}
-  m_Name: Heal
+  m_Script: {fileID: 11500000, guid: c93e490f3a1083a419d702854f89267c, type: 3}
+  m_Name: SC0140FF4010
   m_EditorClassIdentifier: 
-  flickDataSO: {fileID: 11400000, guid: f681f9414a5b8fc42842bab7847d5644, type: 2}
-  spellName: Heal
-  type: 0
-  particles: {fileID: 8228456410625169158, guid: 85f15ca6a79e06c4d8033397b1084dc2, type: 3}
+  shortCode: SCFF
+  pattern: SC0140FF4010

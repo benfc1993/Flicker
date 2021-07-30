@@ -1,11 +1,15 @@
-﻿using UnityEngine;
-
-namespace Flicker
+﻿namespace Flicker
 {
-    [CreateAssetMenu(fileName = "New Flick Data", menuName = "Flicker/Flick Data")]
-    public class FlickData : ScriptableObject
+    public readonly struct FlickData
     {
-        public string shortCode;
-        public string pattern;
+        public string ShortCode { get; }
+        public string Pattern { get; }
+
+        public FlickData(string shortCode, string pattern)
+        {
+            ShortCode = shortCode;
+            Pattern = pattern;
+        }
+
     }
 }

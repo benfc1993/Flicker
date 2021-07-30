@@ -10,10 +10,13 @@ namespace Flicker
     [AddComponentMenu("Flicker/Flick Input")]
     public class FlickerInput : MonoBehaviour
     {
-        public bool active;
+        public bool alwaysActive;
+        static bool active;
+        public bool allowHalfCoords;
+
         [Header("Custom listeners (optional)")]
         [Space]
-        public UnityEvent<FlickDataStruct> onFlickCompleted;
+        public UnityEvent<FlickData> onFlickCompleted;
 
         string _shortCode;
         string _pattern;
@@ -22,7 +25,7 @@ namespace Flicker
         List<Move> _moves = new List<Move>();
 
         const float EdgeValue = 0.75f;
-        readonly WaitForSeconds _timeout = new WaitForSeconds(0.25f);
+        readonly WaitForSeconds _timeout = new WaitForSeconds(0.1f);
 
         void Awake()
         {
@@ -38,6 +41,10 @@ namespace Flicker
             }
         }
 
+        public static void SetActive(bool value)
+        {
+            active = value;
+        }
         public void OnActive(InputAction.CallbackContext context)
         {
             active = context.ReadValueAsButton();
@@ -45,7 +52,7 @@ namespace Flicker
 
         public void OnFlick(InputAction.CallbackContext context)
         {
-            if (!active) return;
+            if (!active && !alwaysActive) return;
             StopAllCoroutines();
             var value = context.ReadValue<Vector2>();
             if (_values.Count == 0 && value.magnitude >= 0.9f) _values.Add(value);
@@ -127,45 +134,68 @@ namespace Flicker
                 NewMove(_magnitudes.Count - 1, ref movement);
             if (_moves.Count > 0)
             {
-                onFlickCompleted?.Invoke(new FlickDataStruct(_shortCode, _pattern));
+                onFlickCompleted?.Invoke(new FlickData(_shortCode, _pattern));
             }
         }
 
         void NewMove(int index, ref Move movement)
         {
             movement.end = _values[index];
+            float[] rawCoords = new float[] {movement.start.x, movement.start.y, movement.end.x, movement.end.y};
+
             _moves.Add(movement);
             _shortCode += movement.type == Move.Type.S
                 ? movement.type.ToString() + movement.dir.ToString()
                 : movement.type.ToString();
             _pattern += movement.type == Move.Type.S ? movement.type.ToString() + movement.dir.ToString() : movement.type.ToString();
-            _pattern += CoordsToString(movement.start.x) + CoordsToString(movement.start.y) + CoordsToString(movement.end.x) + CoordsToString(movement.end.y);
+            _pattern += allowHalfCoords ? HalfCoordsToString(rawCoords) : CoordsToString(rawCoords);
             movement = new Move(_values[index]);
         }
 
-        string CoordsToString(float coord)
+        string CoordsToString(float[] coords)
         {
             string s = "";
-            if (coord < -0.5f)
-                s += "3";
-            if (coord >= -0.5f && coord <= 0.5f)
-                s += "0";
-            if (coord > 0.5f)
-                s += "1";
+            foreach (float coord in coords)
+            {
+                if (coord < -0.5f)
+                    s += "4";
+                if (coord >= -0.5f && coord <= 0.5f)
+                    s += "0";
+                if (coord > 0.5f)
+                    s += "1";
+            }
             return s;
         }
 
-    }
-    public readonly struct FlickDataStruct
-    {
-        public string ShortCode { get; }
-        public string Pattern { get; }
-
-        public FlickDataStruct(string shortCode, string pattern)
+        string HalfCoordsToString(float[] coords)
         {
-            ShortCode = shortCode;
-            Pattern = pattern;
-        }
+            string s = "";
+            foreach (float coord in coords)
+            {
+                if (coord <= -0.80f)
+                {
+                    s += "4";
+                }
 
+                if (coord < -0.20f && coord > -0.80f)
+                {
+                    s += "3";
+                }
+
+                if (coord >= -0.20f && coord <= 0.20f)
+                {
+                    s += "0";
+                }
+
+                if (coord > 0.20f && coord < 0.80f)
+                {
+                    s += "2";
+                }
+
+                if (coord >= 0.80f)
+                    s += "1";
+            }
+            return s;
+        }
     }
 }

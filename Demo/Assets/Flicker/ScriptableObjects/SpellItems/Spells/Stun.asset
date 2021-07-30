@@ -9,8 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da92eaca89d787f43bd9c52769d1efc0, type: 3}
-  m_Name: SW3001FF0103
+  m_Script: {fileID: 11500000, guid: 76419c8e2d659c440863230dc41fefcf, type: 3}
+  m_Name: Stun
   m_EditorClassIdentifier: 
-  flickData: {fileID: 11400000, guid: 7cbeb609980265a4485c09fcb67baf0f, type: 2}
-  icon: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  flickDataSO: {fileID: 11400000, guid: bab2c66f7fa8b6945901170576ec666f, type: 2}
+  spellName: Stun
+  type: 0
+  particles: {fileID: 8228456410625169158, guid: 773567c36947dbe41a910b610ecb3d79, type: 3}

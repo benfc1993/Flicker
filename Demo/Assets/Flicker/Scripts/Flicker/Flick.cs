@@ -4,6 +4,6 @@ namespace Flicker
 {
     public abstract class Flick : ScriptableObject
     {
-        public FlickData flickData;
+        public FlickDataSO flickDataSO;
     }
 }

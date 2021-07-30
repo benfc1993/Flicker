@@ -14,12 +14,12 @@ namespace Flicker
             input.onFlickCompleted.AddListener(ReceiveFlickerData);
         }
 
-        public void ReceiveFlickerData(FlickDataStruct flickData)
+        public void ReceiveFlickerData(FlickData flickData)
         {
             var bestMatch = FlickerCheck.GetBestMatch(flickBook.flicks, flickData);
 
             if (bestMatch == null) return;
-            Flick matchingItem = flickBook.flicks.Find(flick => flick.flickData.pattern == bestMatch.flickData.pattern);
+            Flick matchingItem = flickBook.flicks.Find(flick => flick.flickDataSO.pattern == bestMatch.flickDataSO.pattern);
 
             if(matchingItem != null )
                 Found?.Invoke(matchingItem);
