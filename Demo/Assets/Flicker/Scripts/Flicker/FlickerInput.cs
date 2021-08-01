@@ -158,11 +158,11 @@ namespace Flicker
             foreach (float coord in coords)
             {
                 if (coord < -0.5f)
-                    s += "4";
+                    s += "0";
                 if (coord >= -0.5f && coord <= 0.5f)
                     s += "0";
                 if (coord > 0.5f)
-                    s += "1";
+                    s += "4";
             }
             return s;
         }
@@ -174,26 +174,26 @@ namespace Flicker
             {
                 if (coord <= -0.80f)
                 {
-                    s += "4";
+                    s += "0";
                 }
 
                 if (coord < -0.20f && coord > -0.80f)
                 {
-                    s += "3";
+                    s += "1";
                 }
 
                 if (coord >= -0.20f && coord <= 0.20f)
                 {
-                    s += "0";
+                    s += "2";
                 }
 
                 if (coord > 0.20f && coord < 0.80f)
                 {
-                    s += "2";
+                    s += "3";
                 }
 
                 if (coord >= 0.80f)
-                    s += "1";
+                    s += "4";
             }
             return s;
         }

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c93e490f3a1083a419d702854f89267c, type: 3}
-  m_Name: SW1004FF0422
+  m_Name: SC0231FF3113
   m_EditorClassIdentifier: 
-  shortCode: SWFF
-  pattern: SW1004FF0422
+  shortCode: SCFF
+  pattern: SC4023FF2332

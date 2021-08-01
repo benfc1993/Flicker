@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c93e490f3a1083a419d702854f89267c, type: 3}
-  m_Name: SC4004FF0401
+  m_Name: SC0220
   m_EditorClassIdentifier: 
-  shortCode: SCFF
-  pattern: SC4004FF0401
+  shortCode: SC
+  pattern: SC4004

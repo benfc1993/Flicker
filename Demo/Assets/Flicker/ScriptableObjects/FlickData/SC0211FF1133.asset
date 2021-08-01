@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3feb2b0c0cfef8b428c5f5f36588033c, type: 3}
-  m_Name: Hardflip
+  m_Script: {fileID: 11500000, guid: c93e490f3a1083a419d702854f89267c, type: 3}
+  m_Name: SC0211FF1133
   m_EditorClassIdentifier: 
-  flickDataSO: {fileID: 11400000, guid: 3827ab25edf39b54fb8ee24a2a1a32ce, type: 2}
-  TrickName: Hardflip
-  clip: {fileID: 4889070012629646445, guid: 84a76faf09168cb48a0bdb5b2538dcf8, type: 3}
+  shortCode: 
+  pattern: 

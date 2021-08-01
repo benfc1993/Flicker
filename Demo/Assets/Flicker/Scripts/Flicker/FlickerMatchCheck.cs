@@ -35,25 +35,30 @@ namespace Flicker
 
         static bool NumberComparison(string a, string b, ref float highScore, float accuracy)
         {
-            string numbers = b.Replace("SW", "").Replace("SC", "").Replace("FF", "");
-
+            string aNumbers = a.Replace("SW", "").Replace("SC", "").Replace("FF", "");
+            string bNumbers = b.Replace("SW", "").Replace("SC", "").Replace("FF", "");
             string best = null;
             int score = 0;
 
-            for (int i = 0; i < b.Length; i++)
+            for (int i = 0; i < bNumbers.Length; i++)
             {
-                if (a.Length > i)
-                    score +=  Mathf.Abs(a[i] - b[i]);
+                if (aNumbers.Length > i)
+                    score +=  Mathf.Abs(aNumbers[i] - bNumbers[i]);
             }
 
-            Debug.Log($"pattern input: {b}, Match pattern: {a}, score: {score}");
+            Debug.Log($"aNumbers: {aNumbers}, bNumbers: {bNumbers}, pattern input: {b}, Match pattern: {a}, score: {score}");
 
 
-
-            if (score < highScore && score <= (a.Length * accuracy))
+            if (bNumbers[0] >= (aNumbers[0] - 1) && bNumbers[0] <= (aNumbers[0] + 1) && bNumbers[1] >= (aNumbers[1] - 1) && bNumbers[1] <= (aNumbers[1] + 1) &&
+                bNumbers[bNumbers.Length - 1] >= (aNumbers[aNumbers.Length - 1] - 1) && bNumbers[bNumbers.Length - 1] <= (aNumbers[aNumbers.Length - 1] + 1) &&
+                bNumbers[bNumbers.Length - 2] >= (aNumbers[aNumbers.Length - 2] - 1) && bNumbers[bNumbers.Length - 2] <= (aNumbers[aNumbers.Length - 2] + 1))
             {
-                highScore = score;
-                best = a;
+                Debug.Log($"yes: {b}");
+                if (score < highScore && score <= (a.Length * accuracy))
+                {
+                    highScore = score;
+                    best = a;
+                }
             }
 
             return best != null;
