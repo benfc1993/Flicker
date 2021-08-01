@@ -46,14 +46,10 @@ namespace Flicker
                     score +=  Mathf.Abs(aNumbers[i] - bNumbers[i]);
             }
 
-            Debug.Log($"aNumbers: {aNumbers}, bNumbers: {bNumbers}, pattern input: {b}, Match pattern: {a}, score: {score}");
-
-
             if (bNumbers[0] >= (aNumbers[0] - 1) && bNumbers[0] <= (aNumbers[0] + 1) && bNumbers[1] >= (aNumbers[1] - 1) && bNumbers[1] <= (aNumbers[1] + 1) &&
                 bNumbers[bNumbers.Length - 1] >= (aNumbers[aNumbers.Length - 1] - 1) && bNumbers[bNumbers.Length - 1] <= (aNumbers[aNumbers.Length - 1] + 1) &&
                 bNumbers[bNumbers.Length - 2] >= (aNumbers[aNumbers.Length - 2] - 1) && bNumbers[bNumbers.Length - 2] <= (aNumbers[aNumbers.Length - 2] + 1))
             {
-                Debug.Log($"yes: {b}");
                 if (score < highScore && score <= (a.Length * accuracy))
                 {
                     highScore = score;

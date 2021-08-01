@@ -10,8 +10,18 @@ namespace Flicker
     [AddComponentMenu("Flicker/Flick Input")]
     public class FlickerInput : MonoBehaviour
     {
+        public static FlickerInput instance;
+
+        void Awake()
+        {
+            if (instance == null)
+                instance = this;
+        }
+
         public bool alwaysActive;
         static bool active;
+        [HideInInspector]
+        public bool disabled;
         public bool allowHalfCoords;
 
         [Header("Custom listeners (optional)")]
@@ -27,20 +37,6 @@ namespace Flicker
         const float EdgeValue = 0.75f;
         readonly WaitForSeconds _timeout = new WaitForSeconds(0.05f);
 
-        void Awake()
-        {
-            AssignListeners();
-        }
-
-        void AssignListeners()
-        {
-            FlickerListener[] flickerListeners = FindObjectsOfType<FlickerListener>();
-            foreach (FlickerListener flickerListener in flickerListeners)
-            {
-                flickerListener.LinkToInput(this);
-            }
-        }
-
         public static void SetActive(bool value)
         {
             active = value;
@@ -52,6 +48,7 @@ namespace Flicker
 
         public void OnFlick(InputAction.CallbackContext context)
         {
+            if (disabled) return;
             if (!active && !alwaysActive) return;
             StopAllCoroutines();
             var value = context.ReadValue<Vector2>();

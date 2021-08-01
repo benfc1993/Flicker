@@ -14,9 +14,14 @@ namespace Flicker
         [Range(0f,1f)]
         [SerializeField] public float patternAccuracy = 0.75f;
 
-        public void LinkToInput(FlickerInput input)
+        void OnEnable()
         {
-            input.onFlickCompleted.AddListener(ReceiveFlickerData);
+            FlickerInput.instance.onFlickCompleted.AddListener(ReceiveFlickerData);
+        }
+
+        void OnDisable()
+        {
+            FlickerInput.instance.onFlickCompleted.RemoveListener(ReceiveFlickerData);
         }
 
         public void ReceiveFlickerData(FlickData flickData)
