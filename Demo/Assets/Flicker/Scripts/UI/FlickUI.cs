@@ -23,13 +23,13 @@ public class FlickUI : MonoBehaviour
     public void OnNewFlick(Flick flick)
     {
         UiFlickSO uiFlick = (UiFlickSO) flick;
-        StopAllCoroutines();
-        ClearUI();
-        text.SetText(uiFlick.flickDataSO.pattern);
-        StartCoroutine(Timeout());
-        image.sprite = uiFlick.icon;
-        image.color = Color.white;
-        StartCoroutine(Timeout());
+        // StopAllCoroutines();
+        // ClearUI();
+        // text.SetText(uiFlick.flickDataSO.pattern);
+        // StartCoroutine(Timeout());
+        // image.sprite = uiFlick.icon;
+        // image.color = Color.white;
+        // StartCoroutine(Timeout());
     }
 
     void ClearUI()

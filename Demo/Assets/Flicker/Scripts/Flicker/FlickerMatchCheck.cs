@@ -1,27 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace Flicker
 {
     internal static class FlickerCheck
     {
-        public static T GetBestMatch<T>(List<T> flickList, FlickData flickData) where T : Flick
+        public static T GetBestMatch<T>(List<T> flickList, FlickData flickData, float shortCodeAccuracy = 0.66f, float patternAccuracy = 0.75f ) where T : Flick
         {
             string pattern = flickData.Pattern;
             string shortCode = flickData.ShortCode;
             var matches = new List<T>();
 
-            float codeAccuracy = 0.66f;
-            float codeScore = shortCode.Length * codeAccuracy;
-            float patternAccuracy = 0.75f;
-            float patternScore = 0;
+            float codeScore = shortCode.Length * shortCodeAccuracy;
+            float patternScore = float.PositiveInfinity;
             T bestMatch = default(T);
 
             foreach (T flick in flickList)
             {
-                if (StringComparison(flick.flickDataSO.shortCode, shortCode, ref codeScore, codeAccuracy))
+                if (StringComparison(flick.flickDataSO.shortCode, shortCode, ref codeScore, shortCodeAccuracy, true))
                 {
                     matches.Add(flick);
                 }
@@ -29,14 +25,41 @@ namespace Flicker
 
             foreach (T match in matches)
             {
-                if (StringComparison(match.flickDataSO.pattern, pattern, ref patternScore, patternAccuracy))
+                if (NumberComparison(match.flickDataSO.pattern, pattern, ref patternScore, patternAccuracy))
                     bestMatch = match;
             }
 
             return bestMatch;
 
         }
-        static bool StringComparison(string a, string b, ref float highScore, float accuracy)
+
+        static bool NumberComparison(string a, string b, ref float highScore, float accuracy)
+        {
+            string numbers = b.Replace("SW", "").Replace("SC", "").Replace("FF", "");
+
+            string best = null;
+            int score = 0;
+
+            for (int i = 0; i < b.Length; i++)
+            {
+                if (a.Length > i)
+                    score +=  Mathf.Abs(a[i] - b[i]);
+            }
+
+            Debug.Log($"pattern input: {b}, Match pattern: {a}, score: {score}");
+
+
+
+            if (score < highScore && score <= (a.Length * accuracy))
+            {
+                highScore = score;
+                best = a;
+            }
+
+            return best != null;
+        }
+
+        static bool StringComparison(string a, string b, ref float highScore, float accuracy, bool canHaveEquals = false )
         {
             string best = null;
             int score = 0;
@@ -47,7 +70,7 @@ namespace Flicker
                     score++;
             }
 
-            if (score > highScore && score >= (a.Length * accuracy))
+            if ((canHaveEquals ? score >= highScore : score > highScore) && score >= (a.Length * accuracy))
             {
                 highScore = score;
                 best = a;
@@ -55,5 +78,7 @@ namespace Flicker
 
             return best != null;
         }
+
+
     }
 }

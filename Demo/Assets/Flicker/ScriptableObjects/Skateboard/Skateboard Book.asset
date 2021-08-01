@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68ea6e749c6462a42994e7ebd99b11c2, type: 3}
+  m_Name: Skateboard Book
+  m_EditorClassIdentifier: 
+  flicks:
+  - {fileID: 11400000, guid: 811e4c97ca4c8ca438aa900c26e46f2d, type: 2}
+  - {fileID: 11400000, guid: 0485d6263a43deb4e89f333e60a4011f, type: 2}
+  - {fileID: 11400000, guid: 3d01526e9370a024497e8778765ea6fa, type: 2}
+  - {fileID: 11400000, guid: 78f536b4a055bf54c96b6bc9c9d896d7, type: 2}
+  - {fileID: 11400000, guid: 6579636037f3c534d931b0bf23407ddb, type: 2}
+  - {fileID: 11400000, guid: f66d4fd53ddad004984b8b32e0c09d20, type: 2}
+  - {fileID: 11400000, guid: 5c403d18d95cef24a8101eaf7a93c1e4, type: 2}
+  - {fileID: 11400000, guid: 634014c8cf51cc84ab2d8ecdaf1d494f, type: 2}
+  - {fileID: 11400000, guid: ef7eb8c8a274c40418f4cf6f5a4a6dc6, type: 2}
+  - {fileID: 11400000, guid: ecf1df7933b4fa842b9d000f5f37dabc, type: 2}
+  - {fileID: 11400000, guid: 815bdc022fe966e45a2b2494476acbf9, type: 2}
+  - {fileID: 11400000, guid: 9f40c0c245105924ea1feffbd8b0809f, type: 2}
+  - {fileID: 11400000, guid: a198df0ce07fffa4eae22140dcf55440, type: 2}
+  - {fileID: 11400000, guid: e0dc64f33b3db3547a85656ea572d7a9, type: 2}
+  - {fileID: 11400000, guid: 8502e208e5519c34aa37452bac1bfe3e, type: 2}
+  - {fileID: 11400000, guid: 012fae3eaaf98f543bf06a17d18ee567, type: 2}

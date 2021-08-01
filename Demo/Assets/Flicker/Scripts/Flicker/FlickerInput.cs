@@ -25,7 +25,7 @@ namespace Flicker
         List<Move> _moves = new List<Move>();
 
         const float EdgeValue = 0.75f;
-        readonly WaitForSeconds _timeout = new WaitForSeconds(0.1f);
+        readonly WaitForSeconds _timeout = new WaitForSeconds(0.05f);
 
         void Awake()
         {
