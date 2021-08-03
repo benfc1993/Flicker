@@ -7,6 +7,7 @@ public class SpellSO : Flick
     public string spellName;
     public SpellType type;
     public ParticleSystem particles;
+    public Sprite icon;
 }
 
 

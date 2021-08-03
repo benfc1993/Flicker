@@ -8,6 +8,7 @@ public class FlickerPauseToggle : MonoBehaviour
     void Awake()
     {
         _flickerInput = GetComponent<FlickerInput>();
+        _flickerInput.disabled = _gameStateSO.paused;
         _gameStateSO.onPausedChanged += ToggleFlicker;
     }
 

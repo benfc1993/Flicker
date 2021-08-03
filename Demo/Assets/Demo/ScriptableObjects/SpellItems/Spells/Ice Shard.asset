@@ -16,3 +16,4 @@ MonoBehaviour:
   spellName: Ice Shard
   type: 0
   particles: {fileID: 8228456410625169158, guid: 41de8a3a447fcc044951ea3c46f6803b, type: 3}
+  icon: {fileID: 21300000, guid: 2fe5313abfeb6ad4581ce5c7a0f6f364, type: 3}

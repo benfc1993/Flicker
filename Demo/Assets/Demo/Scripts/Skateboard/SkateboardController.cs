@@ -1,3 +1,4 @@
+using Demo.Scripts.Skateboard;
 using Flicker;
 using UnityEngine;
 
@@ -5,6 +6,7 @@ public class SkateboardController : MonoBehaviour
 {
     Animator _animator;
     bool _grounded;
+    [SerializeField] SkateboardStateSO skateboardStateSO;
 
     void Awake()
     {
@@ -13,12 +15,12 @@ public class SkateboardController : MonoBehaviour
 
     public void PreformTrick(Flick data)
     {
-        TrickSO trick = (TrickSO) data;
+        TrickFlickSO trickFlick = (TrickFlickSO) data;
 
         if (_grounded)
         {
             _animator.enabled = true;
-            _animator.Play(trick.clip.name);
+            _animator.Play(trickFlick.clip.name);
         }
     }
 
@@ -29,4 +31,10 @@ public class SkateboardController : MonoBehaviour
         else
             _grounded = false;
     }
+}
+
+public enum Stance
+{
+    Regular,
+    Goofy
 }

@@ -1,10 +1,10 @@
-using Flicker;
-using UnityEngine;
+﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Trick", menuName = "Skateboard/Trick")]
-public class TrickSO : Flick
+namespace Demo.Scripts.Skateboard
 {
-    public string trickName;
-    public AnimationClip clip;
+    [CreateAssetMenu(fileName = "New Trick", menuName = "Skateboard/Trick")]
+    public class TrickSO : ScriptableObject
+    {
+        public string trickName;
+    }
 }
-

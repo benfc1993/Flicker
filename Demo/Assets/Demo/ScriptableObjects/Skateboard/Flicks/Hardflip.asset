@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3feb2b0c0cfef8b428c5f5f36588033c, type: 3}
+  m_Name: Hardflip
+  m_EditorClassIdentifier: 
+  flickDataSO: {fileID: 11400000, guid: 3827ab25edf39b54fb8ee24a2a1a32ce, type: 2}
+  clip: {fileID: 4889070012629646445, guid: 84a76faf09168cb48a0bdb5b2538dcf8, type: 3}
+  regular: {fileID: 11400000, guid: f11bd8b7bad4a754bae029fb05232a4f, type: 2}
+  goofy: {fileID: 11400000, guid: c3687f78c08ec574f9a75786ae3ffa6f, type: 2}
+  icon: {fileID: 21300000, guid: 49ee990e29db1d94cb01fa22e413afb4, type: 3}

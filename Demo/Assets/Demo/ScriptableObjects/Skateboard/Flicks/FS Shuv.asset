@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: FS Shuv
   m_EditorClassIdentifier: 
   flickDataSO: {fileID: 11400000, guid: f1d939377e94a4349995edea21bf1e37, type: 2}
-  trickName: FS Shuv
   clip: {fileID: 1711099063824261615, guid: 84a76faf09168cb48a0bdb5b2538dcf8, type: 3}
+  regular: {fileID: 11400000, guid: 6e5ae7e275a55594fbe44db6d57b863b, type: 2}
+  goofy: {fileID: 11400000, guid: acf885a6e1471b2478546d1778cf4297, type: 2}
+  icon: {fileID: 21300000, guid: 1c2cf3585eaa4994dbf4527848274580, type: 3}

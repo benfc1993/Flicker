@@ -14,14 +14,14 @@ public class GameStateSO : ScriptableObject
     public Action<bool> onPausedChanged;
     public Action<Scenario> onScenarioChanged;
 
-    void Awake()
+    void OnEnable()
     {
         ResetState();
     }
 
     void ResetState()
     {
-        paused = false;
+        paused = true;
         scenario = Scenario.Skateboarding;
     }
 
@@ -29,6 +29,13 @@ public class GameStateSO : ScriptableObject
     {
         paused = !paused;
         onPausedChanged?.Invoke(paused);
+    }
+
+    public void Resume()
+    {
+        if (paused == false) return;
+        paused = false;
+        onPausedChanged?.Invoke(false);
     }
 
     public void Exit()

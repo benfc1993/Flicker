@@ -8,15 +8,14 @@ public class ScenarioText : MonoBehaviour
     void Awake()
     {
         text = GetComponent<TMP_Text>();
-        text.SetText(GetNextScenario(_gameStateSO.scenario).ToString());
+        text.SetText($"Switch to {GetNextScenario(_gameStateSO.scenario).ToString()}");
 
         _gameStateSO.onScenarioChanged += ChangeScenario;
     }
 
     void ChangeScenario(GameStateSO.Scenario scenario)
     {
-        _gameStateSO.TogglePause();
-        text.SetText(GetNextScenario(scenario).ToString());
+        text.SetText($"Switch to {GetNextScenario(scenario).ToString()}");
     }
 
     GameStateSO.Scenario GetNextScenario(GameStateSO.Scenario scenario)

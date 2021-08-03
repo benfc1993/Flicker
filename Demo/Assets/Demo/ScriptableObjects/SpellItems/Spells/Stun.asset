@@ -16,3 +16,4 @@ MonoBehaviour:
   spellName: Stun
   type: 0
   particles: {fileID: 8228456410625169158, guid: 773567c36947dbe41a910b610ecb3d79, type: 3}
+  icon: {fileID: 21300000, guid: b2014652d711e0142839b5601d77d063, type: 3}

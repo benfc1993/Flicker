@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3feb2b0c0cfef8b428c5f5f36588033c, type: 3}
-  m_Name: TreFlip
+  m_Script: {fileID: 11500000, guid: 951d0e6137ef4d3299ccf79af0bb92bf, type: 3}
+  m_Name: BS pop shuv-it
   m_EditorClassIdentifier: 
-  flickDataSO: {fileID: 11400000, guid: fcbe637d385157248a7e5164563e4488, type: 2}
-  trickName: TreFlip
-  clip: {fileID: 2423544361073759641, guid: 84a76faf09168cb48a0bdb5b2538dcf8, type: 3}
+  clip: {fileID: -6293615958650998277, guid: 84a76faf09168cb48a0bdb5b2538dcf8, type: 3}
+  trickName: BS pop shuv-it

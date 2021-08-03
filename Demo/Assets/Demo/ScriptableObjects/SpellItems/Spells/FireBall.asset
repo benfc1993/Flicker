@@ -16,3 +16,4 @@ MonoBehaviour:
   spellName: Fire Ball
   type: 0
   particles: {fileID: 8228456410625169158, guid: 768ddd0a743637c40a328e682ca41716, type: 3}
+  icon: {fileID: 21300000, guid: 85c3ad56b5af00d4a91aab5059b82624, type: 3}

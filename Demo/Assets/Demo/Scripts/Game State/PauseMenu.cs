@@ -4,15 +4,38 @@ public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameStateSO _gameStateSO;
     CanvasGroup _canvasGroup;
+
+    [SerializeField] CanvasGroup pauseCanvasGroup;
+    [SerializeField] CanvasGroup infoCanvasGroup;
     void Awake()
     {
         _canvasGroup = GetComponent<CanvasGroup>();
-        _gameStateSO.onPausedChanged += ToggleMenu;
+        ShowFlickInfo();
+        _gameStateSO.onPausedChanged += TogglePause;
     }
 
-    void ToggleMenu(bool paused)
+    public void ShowFlickInfo()
     {
-        _canvasGroup.interactable = paused;
-        _canvasGroup.alpha = paused ? 1 : 0;
+        ToggleMenu(pauseCanvasGroup, false);
+        ToggleMenu(infoCanvasGroup, true);
+    }
+
+    public void HideFlickInfo()
+    {
+        ToggleMenu(infoCanvasGroup, false);
+        ToggleMenu(pauseCanvasGroup, true);
+    }
+
+    void TogglePause(bool paused)
+    {
+        ToggleMenu(_canvasGroup, paused);
+        ToggleMenu(pauseCanvasGroup, paused);
+        ToggleMenu(infoCanvasGroup, false);
+    }
+
+    void ToggleMenu(CanvasGroup canvas, bool show)
+    {
+        canvas.interactable = show;
+        canvas.alpha = show ? 1 : 0;
     }
 }

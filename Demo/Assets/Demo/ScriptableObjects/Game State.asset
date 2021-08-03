@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eae643f4fa865a84d81283469651f957, type: 3}
   m_Name: Game State
   m_EditorClassIdentifier: 
-  scenario: 0
-  paused: 0
+  scenario: 1
+  paused: 1

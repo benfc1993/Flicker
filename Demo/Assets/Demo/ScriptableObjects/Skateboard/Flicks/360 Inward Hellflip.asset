@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3feb2b0c0cfef8b428c5f5f36588033c, type: 3}
+  m_Name: 360 Inward Hellflip
+  m_EditorClassIdentifier: 
+  flickDataSO: {fileID: 11400000, guid: dafa41c03ef605842aa7afeb8afea0e3, type: 2}
+  clip: {fileID: 7623994765481673849, guid: 84a76faf09168cb48a0bdb5b2538dcf8, type: 3}
+  regular: {fileID: 11400000, guid: c74654db60a43e640925df44007751bf, type: 2}
+  goofy: {fileID: 11400000, guid: 074bbc4ba25282749813f239421e7ff6, type: 2}
+  icon: {fileID: 21300000, guid: b786b97356c397449935c14bd08f35d2, type: 3}
