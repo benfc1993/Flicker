@@ -6,6 +6,7 @@ public class UIFlickList : MonoBehaviour
 {
     [SerializeField] GameStateSO gameStateSO;
     [SerializeField] SkateboardStateSO skateboardStateSO;
+    [SerializeField] GameObject flickListArea;
     [SerializeField] GameObject flickListContainer;
     [SerializeField] GameObject column;
     [SerializeField] GameObject item;
@@ -31,7 +32,7 @@ public class UIFlickList : MonoBehaviour
 
         if (_currentFlickListContainer != null) return;
 
-        _currentFlickListContainer = Instantiate(flickListContainer, transform);
+        _currentFlickListContainer = Instantiate(flickListContainer, flickListArea.transform);
         GameObject currentColumn = null;
 
         switch (gameStateSO.scenario)
