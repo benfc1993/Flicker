@@ -7,7 +7,7 @@ SC: Counter clockwise sweeping motion
 FF: Flick motion
 ```
 
-![flick example](./Demo/Assets/Demo/Images/Flick Icons/Flick%2017.png)
+![flick example](./Demo/Assets/Demo/Images/Flick%20Icons/Flick%2017.png)
 
 (x , y) </br>
 (-1 , 0) sweep -> (0 , -1), (0 , -1) Flick -> (0 , 1) </br>
