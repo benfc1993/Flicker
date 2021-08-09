@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Spell", menuName = "Spells/Spell")]
-public class SpellSO : Flick
+public class SpellSO : FlickSO
 {
     public string spellName;
     public SpellType type;

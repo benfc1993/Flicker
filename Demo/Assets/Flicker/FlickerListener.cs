@@ -7,7 +7,7 @@ namespace Flicker
     public class FlickerListener : MonoBehaviour
     {
         [SerializeField] FlickBookSO flickBook;
-        public UnityEvent<Flick> Found;
+        public UnityEvent<FlickSO> OnMatchFound;
 
         [Range(0f,1f)]
         [SerializeField] public float shortCodeAccuracy = 0.66f;
@@ -28,10 +28,10 @@ namespace Flicker
         {
             var bestMatch = FlickerCheck.GetBestMatch(flickBook.flicks, flickData, shortCodeAccuracy, patternAccuracy);
             if (bestMatch == null) return;
-            Flick matchingItem = flickBook.flicks.Find(flick => flick.flickDataSO.pattern == bestMatch.flickDataSO.pattern);
+            FlickSO matchingItem = flickBook.flicks.Find(flick => flick.flickDataSO.pattern == bestMatch.flickDataSO.pattern);
 
             if(matchingItem != null )
-                Found?.Invoke(matchingItem);
+                OnMatchFound?.Invoke(matchingItem);
         }
     }
 }

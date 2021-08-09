@@ -6,6 +6,6 @@ namespace Flicker
     [CreateAssetMenu(fileName = "New Flick Book", menuName = "Flicker/Flick Book", order = 0)]
     public class FlickBookSO : ScriptableObject
     {
-        public List<Flick> flicks;
+        public List<FlickSO> flicks;
     }
 }

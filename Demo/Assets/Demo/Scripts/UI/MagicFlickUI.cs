@@ -9,9 +9,9 @@ public class MagicFlickUI : MonoBehaviour
 
     readonly WaitForSeconds _timeout = new WaitForSeconds(3);
 
-    public void OnNewFlick(Flick flick)
+    public void OnNewFlick(FlickSO flickSO)
     {
-        SpellSO spellFlick = (SpellSO) flick;
+        SpellSO spellFlick = (SpellSO) flickSO;
         StopAllCoroutines();
         ClearUI();
         spellName.SetText(spellFlick.spellName);

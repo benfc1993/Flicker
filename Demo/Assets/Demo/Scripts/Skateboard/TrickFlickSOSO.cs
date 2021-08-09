@@ -3,7 +3,7 @@ using Flicker;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Trick", menuName = "Skateboard/Trick Flick")]
-public class TrickFlickSO : Flick
+public class TrickFlickSOSO : FlickSO
 {
     public AnimationClip clip;
     [SerializeField] TrickSO regular;

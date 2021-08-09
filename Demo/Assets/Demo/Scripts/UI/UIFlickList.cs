@@ -49,7 +49,7 @@ public class UIFlickList : MonoBehaviour
             case (GameStateSO.Scenario.Skateboarding):
                 for (int index = 0; index < skateboardBook.flicks.Count; index++)
                 {
-                    TrickFlickSO flick = (TrickFlickSO)skateboardBook.flicks[index];
+                    TrickFlickSOSO flick = (TrickFlickSOSO)skateboardBook.flicks[index];
                     if (index % 6 == 0) currentColumn = Instantiate(column, _currentFlickListContainer.transform);
                     var newItem = Instantiate(item, currentColumn.transform);
                     newItem.GetComponent<UIFlickItem>().Init(flick.icon, flick.TrickName(skateboardStateSO.stance));

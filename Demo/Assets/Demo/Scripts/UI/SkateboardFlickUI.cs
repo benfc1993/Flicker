@@ -23,9 +23,9 @@ public class SkateboardFlickUI : MonoBehaviour
         stanceText.SetText(stance.ToString());
     }
 
-    public void OnNewFlick(Flick flick)
+    public void OnNewFlick(FlickSO flickSO)
     {
-        TrickFlickSO trickFlickFlick = (TrickFlickSO) flick;
+        TrickFlickSOSO trickFlickFlick = (TrickFlickSOSO) flickSO;
         StopAllCoroutines();
         ClearUI();
         trickName.SetText(trickFlickFlick.TrickName(skateboardStateSO.stance));

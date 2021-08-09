@@ -2,7 +2,7 @@
 
 namespace Flicker
 {
-    public abstract class Flick : ScriptableObject
+    public abstract class FlickSO : ScriptableObject
     {
         public FlickDataSO flickDataSO;
     }

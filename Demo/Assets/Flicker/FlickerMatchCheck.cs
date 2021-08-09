@@ -5,7 +5,7 @@ namespace Flicker
 {
     internal static class FlickerCheck
     {
-        public static T GetBestMatch<T>(List<T> flickList, FlickData flickData, float shortCodeAccuracy = 0.66f, float patternAccuracy = 0.75f ) where T : Flick
+        public static T GetBestMatch<T>(List<T> flickList, FlickData flickData, float shortCodeAccuracy = 0.66f, float patternAccuracy = 0.75f ) where T : FlickSO
         {
             string pattern = flickData.Pattern;
             string shortCode = flickData.ShortCode;

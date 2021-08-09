@@ -13,9 +13,9 @@ public class SkateboardController : MonoBehaviour
         _animator = GetComponentInChildren<Animator>();
     }
 
-    public void PreformTrick(Flick data)
+    public void PreformTrick(FlickSO data)
     {
-        TrickFlickSO trickFlick = (TrickFlickSO) data;
+        TrickFlickSOSO trickFlick = (TrickFlickSOSO) data;
 
         if (_grounded)
         {
