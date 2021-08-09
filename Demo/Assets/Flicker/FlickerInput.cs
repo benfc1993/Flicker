@@ -7,10 +7,17 @@ using UnityEngine.InputSystem;
 namespace Flicker
 {
     [RequireComponent((typeof(PlayerInput)))]
-    [AddComponentMenu("Flicker/Flick Input")]
+    [AddComponentMenu("Flicker/Flicker Input")]
     public class FlickerInput : MonoBehaviour
     {
         public static FlickerInput instance;
+
+#if !ENABLE_INPUT_SYSTEM
+        void OnEnable()
+        {
+            throw new Exception("Flicker Input requires the Unity Input System");
+        }
+#endif
 
         void Awake()
         {
@@ -18,11 +25,13 @@ namespace Flicker
                 instance = this;
         }
 
-        public bool alwaysActive;
+        /// <summary>
+        ///   <para>Toggles if listener is always listening to input event.</para>
+        /// </summary>
+        public bool alwaysActive = true;
         static bool active;
         [HideInInspector]
         public bool disabled;
-        public bool allowHalfCoords;
 
         [Header("Custom listeners (optional)")]
         [Space]
@@ -45,6 +54,7 @@ namespace Flicker
         {
             active = context.ReadValueAsButton();
         }
+
 
         public void OnFlick(InputAction.CallbackContext context)
         {
@@ -145,26 +155,11 @@ namespace Flicker
                 ? movement.type.ToString() + movement.dir.ToString()
                 : movement.type.ToString();
             _pattern += movement.type == Move.Type.S ? movement.type.ToString() + movement.dir.ToString() : movement.type.ToString();
-            _pattern += allowHalfCoords ? HalfCoordsToString(rawCoords) : CoordsToString(rawCoords);
+            _pattern += CoordsToString(rawCoords);
             movement = new Move(_values[index]);
         }
 
         string CoordsToString(float[] coords)
-        {
-            string s = "";
-            foreach (float coord in coords)
-            {
-                if (coord < -0.5f)
-                    s += "0";
-                if (coord >= -0.5f && coord <= 0.5f)
-                    s += "0";
-                if (coord > 0.5f)
-                    s += "4";
-            }
-            return s;
-        }
-
-        string HalfCoordsToString(float[] coords)
         {
             string s = "";
             foreach (float coord in coords)
