@@ -7,6 +7,17 @@ SC: Counter clockwise sweeping motion
 FF: Flick motion
 ```
 
+the values for the X and Y axis are translated as below:</br>
+
+| stick input value | code output  |
+|-------|--------|
+| -1    | 0      |
+| -0.5  | 1      |
+| 0     | 2      |
+| 0.5   | 3      |
+| 1     | 4      |
+
+
 ![flick example](./Demo/Assets/Demo/Images/Flick%20Icons/Flick%2017.png)
 
 (x , y) </br>

@@ -92,3 +92,11 @@ The following packages were added:
   com.unity.timeline@1.5.5
   com.unity.ugui@1.0.0
   com.unity.visualscripting@1.6.1
+
+=== Mon Aug  9 22:37:40 2021
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were updated:
+  com.unity.textmeshpro from version 2.1.6 to 3.0.6

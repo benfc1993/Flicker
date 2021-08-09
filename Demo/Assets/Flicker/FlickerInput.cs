@@ -137,7 +137,7 @@ namespace Flicker
                 if (magnitude < EdgeValue && movement.type == Move.Type.S && Vector2.Distance(movement.end, _values[i - 1]) > 0.8f) NewMove(i - 1, ref movement);
             }
 
-            if (_moves.Count == 0 && movement is {type: Move.Type.S})
+            if (_moves.Count == 0 && movement?.type == Move.Type.S)
                 NewMove(_magnitudes.Count - 1, ref movement);
             if (_moves.Count > 0)
             {
