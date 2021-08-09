@@ -1,10 +1,11 @@
 # Flicker
 
 Flicker is a tool to provide a coded output for analogue stick movements. Differentiation is made between sweeping movements around the perimeter of the input and flicks from one edge to another. movement is encoded into an output as below:
-
-SW - Clockwise sweeping motion </br>
-SC - Counter clockwise sweeping motion</br>
-FF - Flick motion
+```yaml
+SW: Clockwise sweeping motion
+SC: Counter clockwise sweeping motion
+FF: Flick motion
+```
 
 ![flick example](./Demo/Assets/Demo/Images/Flick Icons/Flick%2017.png)
 
@@ -25,10 +26,10 @@ The output can also be directly used how ever you would like by utilising the cu
 Flicker contains a base Scriptable object called ```FlickSO```. This provides a data structure to use with the flicker listener, this will allow use of the built in match finding to output the best match from the stick input.
 
 ```c#
-    public abstract class FlickSO : ScriptableObject
-    {
-        public FlickDataSO flickDataSO;
-    }
+public abstract class FlickSO : ScriptableObject
+{
+    public FlickDataSO flickDataSO;
+}
 ```
 
 The patterns can be stored in the ```FlickDataSO``` to allow use across any assets based on the ```FlickSO``` class.
@@ -88,14 +89,15 @@ pattern: SC0220FF2024
 - As custom Flicks extend from the ```FlickSO``` you can simply cast the received ```FlickSO``` to your custom flick class in the function assigned to the ```OnMatchFound``` event:
 
 ```c#
-    public void CastSpell(FlickSO flickSO)
-    {
-         SpellSO spell = (SpellSO)flickSO;
-         Instantiate(spell.particles, particleEmitter);
-    }
+public void CastSpell(FlickSO flickSO)
+{
+     SpellSO spell = (SpellSO)flickSO;
+     Instantiate(spell.particles, particleEmitter);
+}
 ```
 
 
 ### Demo scene
 For an example implementation of the Flicker system please open the demo scene provided.
+
 ![demo](./Assets/demo.PNG)
